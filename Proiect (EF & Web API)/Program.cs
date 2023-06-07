@@ -1,4 +1,3 @@
-using Data;
 using Data.DAL;
 using Data.Models;
 using Microsoft.EntityFrameworkCore;
