@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33530.505
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Proiect EF & Web API", "Proiect (EF & Web API)\Proiect EF & Web API.csproj", "{A81982E0-E762-44E0-9B06-6CF3045E6A44}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Proiect EF with Web API", "Proiect (EF & Web API)\Proiect EF with Web API.csproj", "{A81982E0-E762-44E0-9B06-6CF3045E6A44}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Data", "Data\Data.csproj", "{C808E9C4-7C7A-4890-BD5A-B51CD4FB3D50}"
 EndProject
