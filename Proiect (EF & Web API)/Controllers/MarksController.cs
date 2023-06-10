@@ -3,6 +3,8 @@ using Data.Exceptions;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Proiect__EF___Web_API_.Dtos;
+using Proiect__EF___Web_API_.Utils;
+using System.ComponentModel.DataAnnotations;
 
 namespace Proiect__EF___Web_API_.Controllers
 {
@@ -18,19 +20,11 @@ namespace Proiect__EF___Web_API_.Controllers
         /// <summary>
         /// Adding marks
         /// </summary>
-        /// <param name="mark"></param>
         [HttpPost]
-        public IActionResult AddMark([FromBody] MarksToCreateDto mark)
-        {
-            try
-            {
-                dataAccessLayerService.AddMark(mark.Value, mark.StudentId, mark.CourseId);
-                return Ok();
-            }
-            catch (InvalidIdException e)
-            {
-                return BadRequest(e.Message);
-            }
-        }
+        [ProducesResponseType(StatusCodes.Status200OK, Type = typeof(MarksToCreateDto))]
+        [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(string))]
+        [ProducesResponseType(StatusCodes.Status201Created, Type = typeof(string))]
+        public MarksToCreateDto AddMark([FromBody] MarksToCreateDto grade) => dataAccessLayerService.AddMark(grade.Value, grade.StudentId, grade.CourseId).ToDto();
     }
+
 }

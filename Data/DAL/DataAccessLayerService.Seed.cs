@@ -47,6 +47,30 @@ namespace Data.DAL
                 }
             });
 
+            ctx.Add(new Student
+            {
+                Name = "Catalin Cihai",
+                Age = 19,
+                Address = new Address
+                {
+                    City = "Timisoara",
+                    Street = "Lemului",
+                    Number = 111,
+                }
+            });
+
+            ctx.Add(new Student
+            {
+                Name = "Bogdan Kosmos",
+                Age = 19,
+                Address = new Address
+                {
+                    City = "Oradea",
+                    Street = "T.D. Braileanu",
+                    Number = 37,
+                }
+            });
+
             ctx.SaveChanges();
         }
     }

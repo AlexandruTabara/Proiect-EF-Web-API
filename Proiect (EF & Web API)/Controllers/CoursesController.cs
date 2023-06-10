@@ -16,11 +16,15 @@ namespace Proiect__EF___Web_API_.Controllers
             this.dal = dal;
         }
         /// <summary>
-        /// Intilizeaza DB
+        /// Adding courses
         /// </summary>
         [HttpPost]
         public void AddCourse([FromBody]string courseName) =>
              dal.AddCourse(courseName);
+        /// <summary>
+        /// Get all courses
+        /// </summary>
+        /// <returns></returns>
         [HttpGet()]
         public List<Course> GetAllCourses() =>
          dal.GetAllCourses();
