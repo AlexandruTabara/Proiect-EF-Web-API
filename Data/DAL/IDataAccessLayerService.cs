@@ -15,5 +15,6 @@ namespace Data.DAL
         void Seed();
         bool UpdateOrCreateStudentAddress(int studentId, Address newAddress);
         Student UpdateStudent(Student studentToUpdate);
+        Task<Student> GetOldestStudent();
     }
 }

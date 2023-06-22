@@ -29,7 +29,13 @@ namespace Data.DAL
             return student;
         }
 
+        public async Task<Student> GetOldestStudent()
+        {
+            Student oldestStudent = await ctx.Students.OrderByDescending(s => s.Age).FirstAsync();
 
+            return oldestStudent;
+
+        }
         public Student CreateStudent(Student student)
         {
             if (ctx.Students.Any(s => s.Id == student.Id))
@@ -96,5 +102,7 @@ namespace Data.DAL
             ctx.Students.Remove(student);
             ctx.SaveChanges();
         }
+
+
     }
 }

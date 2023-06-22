@@ -29,6 +29,23 @@ namespace Proiect__EF___Web_API_.Controllers
             var allStudents = dal.GetAllStudents();
             return allStudents.Select(s=> s.ToDto()).ToList();
         }
+        /// <summary>
+        /// Returns oldest student
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet("oldeststudent")]
+        public async Task<IActionResult> GetOldestStudentAsync()
+        {
+            Student oldestStudent = await dal.GetOldestStudent();
+
+            if (oldestStudent == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(oldestStudent);
+        }
+
 
         /// <summary>
         /// Get student by id
